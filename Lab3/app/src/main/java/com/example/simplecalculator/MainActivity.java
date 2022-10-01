@@ -105,7 +105,10 @@ public class MainActivity extends AppCompatActivity {
      */
     private void numOppsMulPass1(){
         for(int i = 0; i<numsIndex; i++){
-            if(opps[i].contains("*")){
+            if(opps[i].contains("^")){
+                nums[i+1] = Math.pow(nums[i], nums[i+1]);
+                setPreviousMulNum(i);
+            }else if(opps[i].contains("*")){
                 nums[i+1] = nums[i] * nums[i+1];
                 setPreviousMulNum(i);
             }else if(opps[i].contains("/")){
